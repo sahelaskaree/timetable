@@ -28,7 +28,7 @@ update etudiant set password = ora_hash(matricule) where matricule = valeur;
 alter table enseignants add password varchar(50);
 update enseignants set password = ora_hash(matricule) where matricule = valeur;
 
-//QUESTION '
+//QUESTION 3
 CREATE VIEW emploisdetemps AS 
 SELECT DISTINCT C.codeCours, T.jourCoursDate  FROM Cours C
 JOIN Typehoraire T
@@ -42,6 +42,10 @@ ON cl.specialiteNomSpec=cls.classSpecialiteNomspec
 WHERE T.jourCoursDate 
 IN ('lundi','mardi','mercredi','jeudi','vendredi','samedi')
 joardi', 'mercredi', 'jeudi','vendredi','samedi')
+
+//QUESTION 4
+ SELECT courCodeCours FROM Etudiantdeclasse WHERE etudiantMatricule =&matricule;
+
 //QUESTION 5
 SET ECHO OFF
 SET MARKUP HTML ON SPOOL ON
