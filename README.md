@@ -1,4 +1,5 @@
 # timetable
+//QUESTION 1
 
 SELECT DISTINCT T.jourCoursDate as jours ,
                   C.intituleCourt ||'('||C.codeCours||')' as cours ,
@@ -21,12 +22,20 @@ WHERE ce.specialiteNomSpec='TIPAM'
 AND   cd.classNiveauidNiveau=002
 ORDER BY T.jourCoursDate ASC
 
+
+
+
+
 //QUESTION 2
 alter table etudiant add password varchar(50);
 update etudiant set password = ora_hash(matricule) where matricule = valeur;
 
 alter table enseignants add password varchar(50);
 update enseignants set password = ora_hash(matricule) where matricule = valeur;
+
+
+
+
 
 //QUESTION 3
 CREATE VIEW emploisdetemps AS 
@@ -43,8 +52,14 @@ WHERE T.jourCoursDate
 IN ('lundi','mardi','mercredi','jeudi','vendredi','samedi')
 joardi', 'mercredi', 'jeudi','vendredi','samedi')
 
+
+
+
 //QUESTION 4
  SELECT courCodeCours FROM Etudiantdeclasse WHERE etudiantMatricule =&matricule;
+
+
+
 
 //QUESTION 5
 SET ECHO OFF
