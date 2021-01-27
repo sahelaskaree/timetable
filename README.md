@@ -21,6 +21,13 @@ WHERE ce.specialiteNomSpec='TIPAM'
 AND   cd.classNiveauidNiveau=002
 ORDER BY T.jourCoursDate ASC
 
+//QUESTION 2
+alter table etudiant add password varchar(50);
+update etudiant set password = ora_hash(matricule) where matricule = valeur;
+
+alter table enseignants add password varchar(50);
+update enseignants set password = ora_hash(matricule) where matricule = valeur;
+
 //QUESTION 3
 CREATE VIEW emploisdetemps AS 
 SELECT DISTINCT C.codeCours, T.jourCoursDate  FROM Cours C
